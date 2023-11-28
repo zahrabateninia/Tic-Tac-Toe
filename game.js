@@ -23,7 +23,7 @@ const Gameboard = (()=>{
         [0, 4, 8], 
         [2, 4, 6] 
     ];
-    
+
 
     const resetGame= ()=>{
         gameboard = ["","","","","","","","",""];
@@ -41,3 +41,23 @@ const Gameboard = (()=>{
         resetGame,
     };
 })();
+
+const players= (()=>{
+    let currentPlayer = 1;
+    const players = [
+        {
+            name : 'Player1',
+            marker : 'X'
+        },
+        {
+            name : 'Player2',
+            marker : 'O'
+        }
+    ];
+
+    const getCurrentPlayer = ()=>{
+        return players[currentPlayer - 1];
+    }
+
+
+});
