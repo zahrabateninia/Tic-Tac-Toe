@@ -60,4 +60,12 @@ const players= (()=>{
     }
 
 
+    const switchPlayer = ()=>{
+        currentPlayer = currentPlayer === 1 ? 2 : 1;   
+    }
+     
+    const resetPlayer = ()=>{
+        currentPlayer = 1;
+    }
+
 });
