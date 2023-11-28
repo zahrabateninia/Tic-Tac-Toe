@@ -7,6 +7,7 @@
     --light-green-color: rgb(135, 195, 143);
     --light-yellow-color: rgb(244, 240, 187);
     --brown-color: rgb(67, 41, 31);
+    --cell-size: 100px; 
 }
 
 @font-face {
@@ -38,9 +39,11 @@ header,h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
-    width: 100px;
-    height: 100px;
+    border: 2px solid var(--brown-color);
+    width: var(--cell-size);   
+    height: var(--cell-size);
+    font-size: calc(var(--cell-size) * .9);
+    font-family: 'skeet';
 }
 
 main{
@@ -66,3 +69,4 @@ main{
 .restartBtn:hover{
     background-color: var(--red-color);
 }
+
