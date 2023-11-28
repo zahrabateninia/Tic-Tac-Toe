@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --red-color: rgb(218, 44, 56);
+    --dark-green-color: rgb(34, 111, 84);
+    --light-green-color: rgb(135, 195, 143);
+    --light-yellow-color: rgb(244, 240, 187);
+    --brown-color: rgb(67, 41, 31);
+}
+body{
+    background-color: var(--light-green-color);
+}
+header,h1{
+    text-align: center;
+
+}
+
+#gameboard{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+#gameboard.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+}
