@@ -8,13 +8,22 @@
     --light-yellow-color: rgb(244, 240, 187);
     --brown-color: rgb(67, 41, 31);
 }
+
+@font-face {
+    font-family: 'skeet';
+    src: url('fonts/SkeetEyes.ttf') format('truetype');
+  }
+  
 body{
     background-color: var(--light-green-color);
 }
 header,h1{
+    color: var(--brown-color);
+    font-family: 'skeet', Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 1rem;
-    font-size: 3rem;
+    font-size: 5rem;
+    text-shadow:  2px 2px 4px rgba(0, 0, 0, 0.3);
 
 }
 

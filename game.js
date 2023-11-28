@@ -27,11 +27,6 @@ const Gameboard = (()=>{
 
     const resetGame= ()=>{
         gameboard = ["","","","","","","","",""];
-
-        const cells = document.querySelectorAll('.cell');
-        cells.forEach((cell)=>{
-            cell.textContent = "";
-        })
     }
 
     return{
@@ -92,7 +87,25 @@ const displayController = (()=>{
     const restartBtn = document.querySelector('.restartBtn');
     const displayResult = document.querySelector('.displayResult');    
     
+    const resetGame = ()=>{
+        Gameboard.resetGame();
+        // additional UI reset
+        const cells = document.querySelectorAll('.cell');
+        cells.forEach((cell)=>{
+            cell.textContent = "";
+        })
+    };
     
-    
+    const updateGameBoard = () => {
+        // Logic to update the displayed game board based on Gameboard state
+        // Use Gameboard.getGameboard() to get the game board state
+
+    };
+
+
+    return {
+        
+    };
+
 })();
 
