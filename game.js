@@ -1,13 +1,13 @@
-const Gameboard = (()=>{
-    let gameboard = ["","","","","","","","",""];
+const GameBoard = (()=>{
+    let gameBoard = ["","","","","","","","",""];
 
-    const getGameboard= ()=>{
-        return gameboard;
+    const getGameBoard= ()=>{
+        return gameBoard;
     };
 
     const placeMarker= (index, marker)=>{
-        if(gameboard[index]==""){
-            gameboard[index]= marker;
+        if(gameBoard[index]==""){
+            gameBoard[index]= marker;
             return true;
         }
         return false;
@@ -26,11 +26,11 @@ const Gameboard = (()=>{
 
 
     const resetGame= ()=>{
-        gameboard = ["","","","","","","","",""];
+        gameBoard = ["","","","","","","","",""];
     }
 
     return{
-        getGameboard,
+        getGameBoard,
         placeMarker,
         winningCombinations,
         resetGame,
@@ -79,33 +79,51 @@ const players= (()=>{
 // displaying the game board, player information, and game results.
 
 const displayController = (()=>{
-    const gameboard = document.querySelector('#gameboard');
+    const gameBoard = document.querySelector('#gameBoard');
     const cells = document.querySelectorAll('.cell');
-    cells.forEach(cell=>{
-        const cellIndex = cell.getAttribute('data-cell-index');
-    })
+    // cells.forEach(cell=>{
+    //     const cellIndex = cell.getAttribute('data-cell-index');
+    // })
     const restartBtn = document.querySelector('.restartBtn');
     const displayResult = document.querySelector('.displayResult');    
     
+
     const resetGame = ()=>{
-        Gameboard.resetGame();
+        GameBoard.resetGame();
         // additional UI reset
-        const cells = document.querySelectorAll('.cell');
         cells.forEach((cell)=>{
             cell.textContent = "";
         })
     };
-    
+
     const updateGameBoard = () => {
-        // Logic to update the displayed game board based on Gameboard state
-        // Use Gameboard.getGameboard() to get the game board state
+        console.log(cells)
+        cells.forEach(cell=>{
+            cell.addEventListener('click',()=>{
+                const cellIndex = cell.getAttribute('data-cell-index');
+                const currentPlayer = players.getCurrentPlayer();
+
+                if(GameBoard.placeMarker(cellIndex, currentPlayer.marker)){
+                    cell.textContent = currentPlayer.marker;
+                    players.switchPlayer();
+                }else{
+                    return;
+                }
+            })
+        })
+
 
     };
 
 
     return {
-        
+        resetGame,
+        updateGameBoard
     };
 
 })();
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    displayController.updateGameBoard();
+});

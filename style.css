@@ -23,18 +23,18 @@ header,h1{
     text-align: center;
     padding: 1rem;
     font-size: 5rem;
-    text-shadow:  2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow:  2px 2px 3px rgba(0, 0, 0, 0.3);
 
 }
 
-#gameboard{
+#gameBoard{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: var(--light-yellow-color);
     margin: auto; 
     width: 300px;
 }
-#gameboard .cell{
+#gameBoard .cell{
     display: flex;
     justify-content: center;
     align-items: center;
