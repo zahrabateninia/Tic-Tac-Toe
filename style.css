@@ -13,15 +13,18 @@ body{
 }
 header,h1{
     text-align: center;
+    padding: 1rem;
 
 }
 
 #gameboard{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
+    background-color: var(--light-yellow-color);
+    margin: auto; 
+    width: 300px;
 }
-#gameboard.cell{
+#gameboard .cell{
     display: flex;
     justify-content: center;
     align-items: center;
