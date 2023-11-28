@@ -68,4 +68,31 @@ const players= (()=>{
         currentPlayer = 1;
     }
 
-});
+    return{
+        getCurrentPlayer,
+        switchPlayer,
+        resetPlayer
+    }
+
+})();
+
+
+// Game flow controller logic
+
+// displayController factory is responsible for updating the 
+// UI based on the game state, handling user inputs, 
+// displaying the game board, player information, and game results.
+
+const displayController = (()=>{
+    const gameboard = document.querySelector('#gameboard');
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell=>{
+        const cellIndex = cell.getAttribute('data-cell-index');
+    })
+    const restartBtn = document.querySelector('.restartBtn');
+    const displayResult = document.querySelector('.displayResult');    
+    
+    
+    
+})();
+
