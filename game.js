@@ -90,14 +90,13 @@ const displayController = (()=>{
 
     const resetGame = ()=>{
         GameBoard.resetGame();
-        // additional UI reset
+        // UI reset
         cells.forEach((cell)=>{
             cell.textContent = "";
         })
     };
 
     const updateGameBoard = () => {
-        console.log(cells)
         cells.forEach(cell=>{
             cell.addEventListener('click',()=>{
                 const cellIndex = cell.getAttribute('data-cell-index');
@@ -110,7 +109,12 @@ const displayController = (()=>{
                     return;
                 }
             })
+        });
+
+        restartBtn.addEventListener('click',()=>{
+            resetGame();
         })
+
 
 
     };
@@ -126,4 +130,7 @@ const displayController = (()=>{
 
 document.addEventListener('DOMContentLoaded', () => {
     displayController.updateGameBoard();
+
 });
+
+
