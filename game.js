@@ -11,9 +11,20 @@ const Gameboard = (()=>{
             return true;
         }
         return false;
+    };
+
+    const resetGame= ()=>{
+        gameboard = ["","","","","","","","",""];
+
+        const cells = document.querySelectorAll('.cell');
+        cells.forEach((cell)=>{
+            cell.textContent = "";
+        })
     }
 
     return{
-
-    }
+        getGameboard,
+        placeMarker,
+        resetGame,
+    };
 })();
