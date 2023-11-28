@@ -8,6 +8,7 @@
     --light-yellow-color: rgb(244, 240, 187);
     --brown-color: rgb(67, 41, 31);
     --cell-size: 100px; 
+    --gray-box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
 }
 
 @font-face {
@@ -63,10 +64,18 @@ main{
   position: relative;
   padding: .6rem 1rem;
   text-align: center;
-  box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
+  box-shadow: var(--gray-box-shadow);
   margin-top: 1rem;
 }
 .restartBtn:hover{
     background-color: var(--red-color);
 }
 
+.displayResult{
+    font-size: 3rem;
+    background-color: var(--light-yellow-color);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    box-shadow: var(--gray-box-shadow);
+    color: var(--red-color);
+}
