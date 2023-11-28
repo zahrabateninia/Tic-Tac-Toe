@@ -14,6 +14,7 @@ body{
 header,h1{
     text-align: center;
     padding: 1rem;
+    font-size: 3rem;
 
 }
 
@@ -31,4 +32,28 @@ header,h1{
     border: 2px solid black;
     width: 100px;
     height: 100px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+.restartBtn{
+  background:var(--dark-green-color);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 1.3rem;
+  letter-spacing: .08em;
+  position: relative;
+  padding: .6rem 1rem;
+  text-align: center;
+  box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
+  margin-top: 1rem;
+}
+.restartBtn:hover{
+    background-color: var(--red-color);
 }
