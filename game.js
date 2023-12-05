@@ -118,9 +118,12 @@ const displayController = (()=>{
         const board = GameBoard.getGameBoard();
 
         for (const combination of combinations){
-            const [a , b, c] = combination;
+            const [a, b, c] = combination; // array destructuring
+            if(board[a] !=='' && board[b] == board[a] && board[c] == board[a]){
+                return board[a]; // return marker of winner
+            }
         }
-
+        return; // if no winner do nth
         
     };
 
