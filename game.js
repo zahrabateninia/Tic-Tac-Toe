@@ -37,7 +37,7 @@ const GameBoard = (()=>{
     };
 })();
 
-const players= (()=>{
+const Players= (()=>{
     let currentPlayer = 1;
     const players = [
         {
@@ -81,9 +81,6 @@ const players= (()=>{
 const displayController = (()=>{
     const gameBoard = document.querySelector('#gameBoard');
     const cells = document.querySelectorAll('.cell');
-    // cells.forEach(cell=>{
-    //     const cellIndex = cell.getAttribute('data-cell-index');
-    // })
     const restartBtn = document.querySelector('.restartBtn');
     const displayResult = document.querySelector('.displayResult');    
     
@@ -100,11 +97,11 @@ const displayController = (()=>{
         cells.forEach(cell=>{
             cell.addEventListener('click',()=>{
                 const cellIndex = cell.getAttribute('data-cell-index');
-                const currentPlayer = players.getCurrentPlayer();
+                const currentPlayer = Players.getCurrentPlayer();
 
                 if(GameBoard.placeMarker(cellIndex, currentPlayer.marker)){
                     cell.textContent = currentPlayer.marker;
-                    players.switchPlayer();
+                    Players.switchPlayer();
                 }else{
                     return;
                 }
@@ -114,9 +111,17 @@ const displayController = (()=>{
         restartBtn.addEventListener('click',()=>{
             resetGame();
         })
+    };
 
+    const findWinner = ()=>{
+        const combinations = GameBoard.winningCombinations;
+        const board = GameBoard.getGameBoard();
 
+        for (const combination of combinations){
+            const [a , b, c] = combination;
+        }
 
+        
     };
 
 
