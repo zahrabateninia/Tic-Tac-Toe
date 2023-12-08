@@ -94,6 +94,7 @@ const displayController = (()=>{
     };
 
     const updateGameBoard = () => {
+        
         cells.forEach(cell=>{
             cell.addEventListener('click',()=>{
                 const cellIndex = cell.getAttribute('data-cell-index');
@@ -102,6 +103,12 @@ const displayController = (()=>{
                 if(GameBoard.placeMarker(cellIndex, currentPlayer.marker)){
                     cell.textContent = currentPlayer.marker;
                     Players.switchPlayer();
+
+                    const winner = findWinner();
+                    if(winner){
+                        displayResult.textContent  = `${winner} wins`
+                        displayResult.style.display = "block";
+                    }
                 }else{
                     return;
                 }
@@ -130,6 +137,7 @@ const displayController = (()=>{
 
     return {
         resetGame,
+        findWinner,
         updateGameBoard
     };
 
