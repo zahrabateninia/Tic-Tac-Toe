@@ -87,7 +87,7 @@ const displayController = (()=>{
 
     const resetGame = ()=>{
         GameBoard.resetGame();
-        // UI reset
+        // reset UI
         cells.forEach((cell)=>{
             cell.textContent = "";
         });
@@ -97,8 +97,14 @@ const displayController = (()=>{
 
     const updateGameBoard = () => {
         
+        let gameOver = false;
+
         cells.forEach(cell=>{
             cell.addEventListener('click',()=>{
+
+                if(gameOver){
+                    return; // prevent further interaction
+                }
                 const cellIndex = cell.getAttribute('data-cell-index');
                 const currentPlayer = Players.getCurrentPlayer();
 
@@ -110,6 +116,8 @@ const displayController = (()=>{
                     if(winner){
                         displayResult.textContent  = `${winner} wins`
                         displayResult.style.display = "block";
+                        gameOver = true;
+
                     }
                 }else{
                     return;
@@ -119,6 +127,7 @@ const displayController = (()=>{
 
         restartBtn.addEventListener('click',()=>{
             resetGame();
+            gameOver = false;
         })
     };
 
@@ -137,6 +146,8 @@ const displayController = (()=>{
     };
 
 
+
+
     return {
         resetGame,
         findWinner,
@@ -147,7 +158,13 @@ const displayController = (()=>{
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    displayController.updateGameBoard();
+    const stopTheGame = displayController.findWinner();
+    if(!stopTheGame){
+        displayController.updateGameBoard();
+    }else{
+        return;
+    }
+    
 
 });
 
