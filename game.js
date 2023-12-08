@@ -90,7 +90,9 @@ const displayController = (()=>{
         // UI reset
         cells.forEach((cell)=>{
             cell.textContent = "";
-        })
+        });
+        displayResult.textContent = "";
+        displayResult.style.display = "none";
     };
 
     const updateGameBoard = () => {
