@@ -105,6 +105,7 @@ const displayController = (()=>{
                 if(gameOver){
                     return; // prevent further interaction
                 }
+
                 const cellIndex = cell.getAttribute('data-cell-index');
                 const currentPlayer = Players.getCurrentPlayer();
 
@@ -113,14 +114,20 @@ const displayController = (()=>{
                     Players.switchPlayer();
 
                     const winner = findWinner();
+                    const draw = checkDraw();
+
                     if(winner){
                         displayResult.textContent  = `${winner} wins`
                         displayResult.style.display = "block";
                         gameOver = true;
 
-                    }
-                }else{
+                    }else if(draw){
+                        displayResult.textContent = "It's a Draw";
+                        displayResult.style.display = 'block';
+                        gameOver = true;
+                    }else{
                     return;
+                    }
                 }
             })
         });
@@ -145,8 +152,10 @@ const displayController = (()=>{
         
     };
 
-
-
+    const checkDraw = ()=>{
+        const board = GameBoard.getGameBoard();
+        return board.every(cell => cell !== '') // tests if every element is not ''
+    };
 
     return {
         resetGame,
@@ -158,12 +167,7 @@ const displayController = (()=>{
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const stopTheGame = displayController.findWinner();
-    if(!stopTheGame){
-        displayController.updateGameBoard();
-    }else{
-        return;
-    }
+    displayController.updateGameBoard();
     
 
 });
