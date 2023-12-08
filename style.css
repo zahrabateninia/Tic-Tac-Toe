@@ -16,16 +16,21 @@
     src: url('fonts/Silkscreen-Bold.ttf') format('truetype');
   }
   
+@font-face {
+    font-family: 'skeet';
+    src: url('fonts/SkeetEyes.ttf') format('truetype');
+}
+
 body{
     background-color: var(--light-green-color);
 }
 header,h1{
-    color: var(--brown-color);
+    color: var(--dark-green-color);
     font-family: 'silkscreen', Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 1rem;
     font-size: 5rem;
-    text-shadow:  2px 2px 3px rgba(0, 0, 0, 0.3);
+    text-shadow:  2px 2px 3px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -59,10 +64,10 @@ main{
   border: none;
   border-radius: 4px;
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   letter-spacing: .08em;
   position: relative;
-  padding: .6rem 1rem;
+  padding: .8rem 1rem;
   text-align: center;
   box-shadow: var(--gray-box-shadow);
   margin-top: 1rem;
