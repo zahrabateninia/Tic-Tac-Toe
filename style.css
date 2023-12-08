@@ -12,8 +12,8 @@
 }
 
 @font-face {
-    font-family: 'skeet';
-    src: url('fonts/SkeetEyes.ttf') format('truetype');
+    font-family: 'silkscreen';
+    src: url('fonts/Silkscreen-Bold.ttf') format('truetype');
   }
   
 body{
@@ -21,7 +21,7 @@ body{
 }
 header,h1{
     color: var(--brown-color);
-    font-family: 'skeet', Arial, Helvetica, sans-serif;
+    font-family: 'silkscreen', Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 1rem;
     font-size: 5rem;
