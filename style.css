@@ -70,7 +70,7 @@ main{
   padding: .8rem 1rem;
   text-align: center;
   box-shadow: var(--gray-box-shadow);
-  margin-top: 1rem;
+  margin: 1rem;
 }
 .restartBtn:hover{
     background-color: var(--red-color);
